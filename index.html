@@ -55,8 +55,15 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
+    
+    function deletePrice(obj) {
+      if(obj.price !== undefined){
+        delete obj.price
+      } else {
+        obj.priceless = true
+      }
+     
+    return obj
     }
 
     // 👉 CHALLENGE 4
@@ -66,7 +73,12 @@
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
-
+      if(arr.length % 2 !== 0){
+        return false
+      } else {
+        return true
+      }
+      return arr
     }
 
     // 👉 CHALLENGE 5
