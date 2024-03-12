@@ -87,7 +87,12 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
+    function firstOrLast(arr, Boolean) {
+      if(Boolean === true){
+        return arr[0]
+      } else {
+        return arr.at(-1);
+      }
 
     }
 
@@ -97,8 +102,9 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
-
+    function pushElement(arr, val) {
+     arr[arr.length] = val;
+     return arr
     }
 
     // 👉 CHALLENGE 7
@@ -113,9 +119,23 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
+    function stripX(string) {
+      let results = []
+      let splitString = string.split('');
+      for(let idx in splitString){
+        let char = splitString[idx]
+        if(char !== 'x'){
+          results[results.length] = char;
+        }
+      }
+    return results.join('') 
 
-    }
+   
+       
+      }
+     
+     
+    
 
     // 👉 CHALLENGE 8
     // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
@@ -126,7 +146,16 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
+    function stripChar(str, char) {
+      results = [];
+      splitstr = str.split('');
+      for(let idx in splitstr){
+        let val = splitstr[idx];
+        if(val !== char){
+          results[results.length] = val;
+        }      
+      }
+      return results.join('')
 
     }
 
@@ -139,7 +168,14 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
+    function getProps(obj) {
+      result = [];
+      for(let i in obj){ 
+        if(i !== 'married' && i !== 'age') {
+          result[result.length] = i;
+        } 
+      }
+      return result
 
     }
 
